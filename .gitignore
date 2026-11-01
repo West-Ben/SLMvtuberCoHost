@@ -43,3 +43,6 @@ ecosystem.live.js
 # Stream overlays (contain widget tokens)
 obsOverlayV2.html
 rachael_loading_terminal.html
+
+# Local-only docs
+CLAUDE.md
