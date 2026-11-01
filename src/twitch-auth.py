@@ -26,7 +26,7 @@ from urllib.parse import parse_qs, urlencode, urlparse
 import requests
 from dotenv import load_dotenv, set_key
 
-ENV_PATH     = Path(__file__).parent / ".env"
+ENV_PATH     = Path(__file__).resolve().parent.parent / ".env"
 REDIRECT_URI = "http://localhost:17563"
 SCOPES       = "channel:read:subscriptions bits:read channel:read:redemptions"
 AUTH_URL     = "https://id.twitch.tv/oauth2/authorize"

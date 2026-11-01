@@ -35,7 +35,7 @@ from typing import Iterator, Literal
 
 from pydantic import BaseModel, ConfigDict, Field
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+REPO_ROOT = Path(__file__).resolve().parent.parent.parent
 ROWS_DIR  = REPO_ROOT / "rows"
 
 SCHEMA_VERSION = 2   # v2: plan + playback_trace (v1 rows carried parsed_segments)

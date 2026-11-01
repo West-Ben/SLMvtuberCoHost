@@ -8,7 +8,9 @@ import tempfile
 from pathlib import Path
 
 from dotenv import load_dotenv
-load_dotenv(Path(__file__).parent / ".env")
+SRC_DIR = Path(__file__).resolve().parent   # code lives in src/
+REPO_ROOT = SRC_DIR.parent                  # .env, persona/, workspace/, runtime data
+load_dotenv(REPO_ROOT / ".env")
 
 # ─── Ports ────────────────────────────────────────────────
 ORCHESTRATOR_PORT = 8052    # orchestrator.py HTTP server
@@ -130,7 +132,6 @@ REACTION_SAMPLING   = {
 }
 
 # ─── Paths ────────────────────────────────────────────────
-REPO_ROOT       = Path(__file__).parent
 PERSONA_DIR     = REPO_ROOT / "persona"
 IMAGELOG_DIR    = REPO_ROOT / "imagelog"
 ROWS_DIR        = REPO_ROOT / "rows"
@@ -139,7 +140,7 @@ DPO_DIR         = REPO_ROOT / "dpo"
 ADAPTERS_DIR    = REPO_ROOT / "adapters"
 ADAPTER_REGISTRY = ADAPTERS_DIR / "registry.json"
 DATASETS_DIR    = REPO_ROOT / "datasets"
-TRAINING_DATA_STATIC = REPO_ROOT / "training" / "data"   # core.jsonl (replay core), eval_set.jsonl (fixed)
+TRAINING_DATA_STATIC = SRC_DIR / "training" / "data"   # core.jsonl (replay core), eval_set.jsonl (fixed)
 
 # ─── Nightly adapter (local 4080, QLoRA E4B; 12B deferred) ─
 # base_core: nightly LoRAs are trained on BASE_CORE_HF and served on top of

@@ -1,7 +1,7 @@
 """
 python -m control_panel [--port 8060] [--no-browser]
 
-Run from vtuberMCP/. Binds 127.0.0.1 only. Ctrl+C stops the panel and every
+Usually started via start.py in the project root. Binds 127.0.0.1 only. Ctrl+C stops the panel and every
 service it started (services adopted as "external" are left running).
 """
 

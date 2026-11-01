@@ -16,7 +16,7 @@ from fastapi.concurrency import run_in_threadpool
 from fastapi.responses import FileResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 
-from . import LOG_DIR, REPO_ROOT
+from . import LOG_DIR, REPO_ROOT, SRC_DIR
 from . import data_api
 from . import settings as settings_mod
 from .dream import Dream
@@ -287,7 +287,7 @@ def dry_reaction(body: dict):
     text = (body.get("text") or "").strip()
     if not text:
         raise HTTPException(400, "text required")
-    argv = [*PY, str(REPO_ROOT / "orchestrator.py"), "--text", text, "--no-log"]
+    argv = [*PY, str(SRC_DIR / "orchestrator.py"), "--text", text, "--no-log"]
     if body.get("direct"):
         argv.append("--direct")
     return jobs.run("dry-reaction", argv).view()

@@ -13,9 +13,9 @@ from pathlib import Path
 
 from dotenv import dotenv_values, set_key, unset_key
 
-from . import ENV_PATH, REPO_ROOT
+from . import ENV_PATH, REPO_ROOT, SRC_DIR
 
-CONFIG_PATH = REPO_ROOT / "config.py"
+CONFIG_PATH = SRC_DIR / "config.py"
 
 # Read by scripts directly (not via config.py) but still set through .env.
 EXTRA_KEYS = {

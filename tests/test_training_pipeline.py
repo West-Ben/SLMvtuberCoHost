@@ -178,7 +178,7 @@ def test_eval_run_promotes_or_rejects(tmp_path, monkeypatch):
                     "window_start": fx["start"], "window_end": fx["end"]}, "reference": "x"}
     (tmp_path / "eval.jsonl").write_text(json.dumps(item) + "\n")
     monkeypatch.setattr(eg, "EVAL_SET_PATH", tmp_path / "eval.jsonl")
-    monkeypatch.setattr(eg, "CORE_PROMPTS_PATH", ROOT / "training" / "data" / "core_prompts.jsonl")
+    monkeypatch.setattr(eg, "CORE_PROMPTS_PATH", ROOT / "src" / "training" / "data" / "core_prompts.jsonl")
     monkeypatch.setattr(eg, "ROOT", tmp_path)
     reg = tmp_path / "registry.json"
     registry.save({"adapters": [], "current": None}, reg)

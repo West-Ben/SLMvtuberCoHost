@@ -9,15 +9,18 @@ from pathlib import Path
 # .env after a Settings change. Children are always spawned from this snapshot.
 BASE_ENV = dict(os.environ)
 
-REPO_ROOT = Path(__file__).resolve().parent.parent
+SRC_DIR = Path(__file__).resolve().parent.parent       # code
+REPO_ROOT = SRC_DIR.parent                              # .env, persona/, runtime data
 VTUBE_ROOT = REPO_ROOT.parent
 ENV_PATH = REPO_ROOT / ".env"
 LOG_DIR = REPO_ROOT / "logs"
 STATE_PATH = Path(__file__).resolve().parent / "state.json"
 
-if str(REPO_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPO_ROOT))
+if str(SRC_DIR) not in sys.path:
+    sys.path.insert(0, str(SRC_DIR))
 
 
 def child_env(**extra) -> dict:
-    return {**BASE_ENV, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8", **extra}
+    # Children run with cwd=REPO_ROOT (data paths are relative to it) and import from src/.
+    pythonpath = os.pathsep.join(p for p in (str(SRC_DIR), BASE_ENV.get("PYTHONPATH", "")) if p)
+    return {**BASE_ENV, "PYTHONUNBUFFERED": "1", "PYTHONIOENCODING": "utf-8", "PYTHONPATH": pythonpath, **extra}

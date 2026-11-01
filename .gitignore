@@ -3,6 +3,8 @@
 
 # Python / tooling caches
 __pycache__/
+.venv/
+src/control_panel/state.json
 *.pyc
 .pytest_cache/
 unsloth_compiled_cache/
@@ -20,8 +22,8 @@ rachel_memory_db/
 training_data/
 training_dataregen_test.jsonl
 persona/ledger_pending.jsonl
-training/data/eval_set.jsonl
-training/data/core.jsonl
+src/training/data/eval_set.jsonl
+src/training/data/core.jsonl
 
 # Models / adapters (third-party weights and trained LoRAs)
 adapters/

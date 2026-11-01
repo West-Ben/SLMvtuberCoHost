@@ -66,7 +66,7 @@ RESPONSE_PART    = GENERATION_PREFIX
 # pinnable via LLAMA_MEDIA_MARKER) — see llamacpp_media_marker().
 LLAMACPP_MEDIA_MARKER = "<__media__>"
 
-SYSTEM_PROMPT_PATH = Path(__file__).parent / "persona" / "SYSTEM_PROMPT.md"
+SYSTEM_PROMPT_PATH = Path(__file__).resolve().parent.parent / "persona" / "SYSTEM_PROMPT.md"
 
 # Matches any special-token-looking literal: <|x>, <x|>, <|x|>
 _SPECIAL_LIKE_RE = re.compile(r"<\|[^<>\s]{0,32}?>|<[^<>\s|]{1,32}\|>")

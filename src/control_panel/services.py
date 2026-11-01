@@ -14,7 +14,7 @@ from urllib.parse import urlparse
 
 import requests
 
-from . import REPO_ROOT, child_env
+from . import REPO_ROOT, SRC_DIR, child_env
 from .settings import env_file_values
 
 
@@ -37,7 +37,7 @@ class ServiceSpec:
     gpu: bool = False
     in_stack: bool = True
     start_timeout_s: float = 60.0
-    script: str | None = None          # python script under REPO_ROOT; None → custom argv()
+    script: str | None = None          # python script under SRC_DIR; None → custom argv()
 
     def defaults(self) -> dict:
         return {f.name: f.default for f in self.flags}
@@ -54,7 +54,7 @@ class ServiceSpec:
         return out
 
     def argv(self, values: dict) -> list[str]:
-        return [sys.executable, "-u", str(REPO_ROOT / self.script), *self.render_flags(values)]
+        return [sys.executable, "-u", str(SRC_DIR / self.script), *self.render_flags(values)]
 
     def health(self) -> bool:
         return tcp_open(self.port) if self.port else False

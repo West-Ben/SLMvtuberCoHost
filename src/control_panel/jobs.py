@@ -14,7 +14,7 @@ import threading
 import time
 from dataclasses import dataclass, field
 
-from . import REPO_ROOT, child_env
+from . import REPO_ROOT, SRC_DIR, child_env
 from .logbus import LineSplitter, LogBus
 from .supervisor import kill_tree, spawn_flags
 
@@ -149,7 +149,7 @@ class JobRunner:
 
 def palette() -> dict[str, dict]:
     m = lambda mod, *a: [*PY, "-m", mod, *a]
-    s = lambda script, *a: [*PY, str(REPO_ROOT / script), *a]
+    s = lambda script, *a: [*PY, str(SRC_DIR / script), *a]
     return {
         "preflight":            {"argv": s("preflight.py", "--skip-dry-run"), "help": "start-of-stream checks (no dry reaction)"},
         "preflight-full":       {"argv": s("preflight.py"), "help": "checks + one dry reaction (needs the stack)"},

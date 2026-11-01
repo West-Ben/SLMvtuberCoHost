@@ -118,6 +118,6 @@ def test_prune_respects_age(tmp_path):
 
 def test_cli_runs_as_script_and_module():
     for cmd in ([sys.executable, "training/training_logger.py"], [sys.executable, "-m", "training.training_logger"]):
-        out = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True, timeout=60)
+        out = subprocess.run(cmd, cwd=ROOT / "src", capture_output=True, text=True, timeout=60)
         assert out.returncode == 0, out.stderr
         assert "review-queue" in out.stdout

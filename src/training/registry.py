@@ -22,7 +22,7 @@ import tempfile
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent.parent.parent
 REGISTRY_PATH = ROOT / "adapters" / "registry.json"
 
 

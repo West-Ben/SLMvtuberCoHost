@@ -40,9 +40,10 @@ import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
+SRC = Path(__file__).resolve().parent.parent
+ROOT = SRC.parent
+if str(SRC) not in sys.path:
+    sys.path.insert(0, str(SRC))
 
 import prompt_format                                        # noqa: E402
 import tag_parser                                           # noqa: E402
