@@ -25,11 +25,11 @@ SPEAK_URL        = f"http://localhost:{TTS_SPEAK_PORT}/speak"
 
 LLM_URL           = os.getenv("LLM_URL",   "http://localhost:8080/v1/chat/completions")
 LLM_TOKEN         = os.getenv("LLM_TOKEN",  "local")
-LLM_MODEL         = os.getenv("LLM_MODEL",  "rachel-v5-e4b-f16")
+LLM_MODEL         = os.getenv("LLM_MODEL",  "")
 
-HF_URL            = os.getenv("HF_URL",   "https://fd1ht4afek3rrcbt.us-east-1.aws.endpoints.huggingface.cloud/v1")
+HF_URL            = os.getenv("HF_URL",   "")
 HF_TOKEN          = os.getenv("HF_TOKEN", "")
-HF_MODEL          = os.getenv("HF_MODEL", "BDubEast/rachel-v5")
+HF_MODEL          = os.getenv("HF_MODEL", "")
 
 CABLE_DEVICE_NAME   = os.getenv("CABLE_DEVICE_NAME",   "CABLE Input")   # VB-Audio → Warudo lip sync
 SPEAKER_DEVICE_NAME = os.getenv("SPEAKER_DEVICE_NAME", "")              # "" = system default output
@@ -89,7 +89,7 @@ CHAT_WINDOW_LINES      = 30     # raw lines fed into each summary
 
 # ─── Embedding + Memory ───────────────────────────────────
 EMBED_URL          = os.getenv("EMBED_URL",          "http://172.17.176.1:1234/v1/embeddings")
-EMBED_MODEL        = os.getenv("EMBED_MODEL",        "text-embedding-nomic-embed-text-v2-moe")
+EMBED_MODEL        = os.getenv("EMBED_MODEL",        "")
 MEMORY_DB_PATH     = os.getenv("MEMORY_DB_PATH",     "./rachel_memory_db")
 TRAINING_DATA_DIR  = os.getenv("TRAINING_DATA_DIR",  "./training_data")
 SESSION_LOG_DIR    = os.getenv("SESSION_LOG_DIR",    "./session_log")
