@@ -1,0 +1,54 @@
+{
+  "window_id": "fixture0001",
+  "start": 1761300000.0,
+  "end": 1761300010.4,
+  "reason": "window",
+  "frames": [
+    {
+      "path": "tests/fixtures/window_0001/f01.jpg",
+      "t": 1761300000.5
+    },
+    {
+      "path": "tests/fixtures/window_0001/f02.jpg",
+      "t": 1761300002.9
+    },
+    {
+      "path": "tests/fixtures/window_0001/f03.jpg",
+      "t": 1761300005.3
+    },
+    {
+      "path": "tests/fixtures/window_0001/f04.jpg",
+      "t": 1761300007.7
+    },
+    {
+      "path": "tests/fixtures/window_0001/f05.jpg",
+      "t": 1761300010.1
+    }
+  ],
+  "speech": [
+    {
+      "t": 1761300002.1,
+      "text": "okay hela is actually cooking right now"
+    }
+  ],
+  "chat": [
+    {
+      "t": 1761300006.8,
+      "user": "viewer1",
+      "text": "strange diff"
+    }
+  ],
+  "passive_chat": [
+    {
+      "t": 1761300008.0,
+      "user": "lurker",
+      "text": "jeff ult incoming"
+    },
+    {
+      "t": 1761299990.0,
+      "user": "old",
+      "text": "before window"
+    }
+  ],
+  "model_output": "hela is always cooking. {anim:shrug}{expr:joy} [chuckle] strange diff is a lie and you know it"
+}

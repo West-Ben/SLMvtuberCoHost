@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachel Control Panel</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23c084fc'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<nav id="nav">
+  <div class="brand">Rachel<span>control</span></div>
+  <a href="#stream" data-page="stream">Stream</a>
+  <a href="#console" data-page="console">Console</a>
+  <a href="#data" data-page="data">Data</a>
+  <a href="#dream" data-page="dream">Dream</a>
+  <a href="#settings" data-page="settings">Settings</a>
+  <div class="nav-foot">
+    <div id="ws-state" class="dot off" title="panel connection"></div>
+    <div id="svc-mini"></div>
+  </div>
+</nav>
+<main id="main"></main>
+<div id="drawer" class="drawer hidden"><div class="drawer-head"><b id="drawer-title"></b><button class="ghost" id="drawer-close">✕</button></div><div id="drawer-body"></div></div>
+<div id="toasts"></div>
+<script src="/static/app.js"></script>
+</body>
+</html>

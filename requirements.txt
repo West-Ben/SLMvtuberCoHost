@@ -1,0 +1,38 @@
+# Runtime (live pipeline). Install torch/torchaudio for your CUDA version first:
+#   pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+chatterbox-tts==0.1.7
+fastmcp==3.2.4
+fastapi==0.136.3
+uvicorn==0.36.0
+Flask==3.1.0
+httpx==0.28.1
+requests==2.32.3
+python-dotenv==1.2.2
+pydantic==2.13.3
+numpy==2.2.6
+scipy==1.15.2
+pillow==12.1.1
+psutil==7.0.0
+librosa==0.11.0
+sounddevice==0.5.0
+soundfile==0.13.1
+PyAudio==0.2.14
+PyAudioWPatch==0.2.12.8
+pyrnnoise==0.4.3
+silero-vad==6.2.1
+obsws-python==1.8.0
+websocket-client==1.8.0
+chromadb==0.4.14
+huggingface_hub
+anthropic==0.109.1
+
+# Training (offline nightly loop)
+unsloth==2026.5.2
+transformers
+trl==0.24.0
+peft==0.19.1
+datasets==3.6.0
+tokenizers==0.22.2
+
+# Tests
+pytest==8.3.3

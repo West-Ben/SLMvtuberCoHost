@@ -1,0 +1,45 @@
+# Secrets
+.env
+
+# Python / tooling caches
+__pycache__/
+*.pyc
+.pytest_cache/
+unsloth_compiled_cache/
+.claude/
+
+# Runtime data, datasets, memories, logs (generated locally)
+rows/
+curated/
+dpo/
+datasets/
+imagelog/
+logs/
+session_log/
+rachel_memory_db/
+training_data/
+training_dataregen_test.jsonl
+persona/ledger_pending.jsonl
+training/data/eval_set.jsonl
+training/data/core.jsonl
+
+# Models / adapters (third-party weights and trained LoRAs)
+adapters/
+*.gguf
+*.safetensors
+*.bin
+*.pt
+*.mp3
+*.wav
+
+# Backups and one-off scripts
+bak/
+backups/
+hf-model-upload.py
+Ecosystem.config
+ecosystem.live.config.js
+ecosystem.live.js
+
+# Stream overlays (contain widget tokens)
+obsOverlayV2.html
+rachael_loading_terminal.html
