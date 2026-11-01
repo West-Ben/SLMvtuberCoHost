@@ -24,8 +24,8 @@ System text always comes from persona/SYSTEM_PROMPT.md through prompt_format; th
 CSV system prompts are discarded. Zero frames, input_kind "legacy_text".
 
 Run (from the repo root):
-  python -m training.convert_legacy_csv --in F:/LLM/vtubeModels/TrainingSets/version7 \
-      --out F:/LLM/vtubeModels/TrainingSets/version7/ready [--thinking-policy drop|think] [--seed 3407]
+  python -m training.convert_legacy_csv --in path/to/TrainingSets/version7 \
+      --out path/to/TrainingSets/version7/ready [--thinking-policy drop|think] [--seed 3407]
 """
 
 import argparse
@@ -61,7 +61,7 @@ LEGACY_FRAME_SENTINEL = "legacy:no-frames"   # only satisfies reviewer.stage_a's
 CHAT_T = 0.0                                 # legacy rows have no timestamps: every chat line at +0.0s
 DEFAULT_V7_1_AUTHOR = "viewer_1"
 UPLOAD_CMD = ("huggingface-cli upload BDubEast/rachel-v7-sft "
-              "F:/LLM/vtubeModels/TrainingSets/version7/ready . --repo-type dataset --private")
+              "path/to/TrainingSets/version7/ready . --repo-type dataset --private")
 
 # Explicit legacy rewrites from the brief: (kind, legacy name) → (replacement text, edit label)
 EXPLICIT_REWRITES = {

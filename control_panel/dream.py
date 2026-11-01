@@ -88,7 +88,7 @@ class Dream:
         nights = curated_nights(CURATED_DIR)
         new, baked = pick_nights(nights, reg, 3) if nights else ([], [])
         env = env_file_values()
-        base_hf = env.get("BASE_CORE_HF") or r"F:\LLM\models\gemma-4-e4b"
+        base_hf = env.get("BASE_CORE_HF") or ""
         return {
             "defaults": {"version": version, "run_id": version,
                          "dates": [d for d in want if d in row_dates] or row_dates[-2:]},

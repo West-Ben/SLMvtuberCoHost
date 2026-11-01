@@ -146,11 +146,12 @@ TRAINING_DATA_STATIC = REPO_ROOT / "training" / "data"   # core.jsonl (replay co
 # BASE_CORE_GGUF — these MUST be the same weights (e.g. both base Gemma 4 E4B,
 # or both the merged Rachel V6). A LoRA trained on one and served on the other
 # is silently wrong.
-BASE_CORE_HF    = os.getenv("BASE_CORE_HF",   r"F:\LLM\models\gemma-4-e4b")
+BASE_CORE_HF    = os.getenv("BASE_CORE_HF",   "")
 BASE_CORE_GGUF  = os.getenv("BASE_CORE_GGUF", "")
-BASE_CORE_MMPROJ = os.getenv("BASE_CORE_MMPROJ", r"F:\LLM\vtubeModels\rachel-v6\mmproj-F32.gguf")
-LLAMACPP_DIR    = Path(os.getenv("LLAMACPP_DIR", r"F:\LLM\llama.cpp"))
+BASE_CORE_MMPROJ = os.getenv("BASE_CORE_MMPROJ", "")
+LLAMACPP_DIR    = Path(os.getenv("LLAMACPP_DIR", ""))
 TOPICS_PATH     = REPO_ROOT / "topics.json"
-VOICE_REF_PATH  = Path(os.getenv("VOICE_REF_PATH", r"F:\LLM\vtubeModels\rachael_v2.mp3"))
+# Empty = Chatterbox's built-in voice.
+VOICE_REF_PATH  = Path(os.getenv("VOICE_REF_PATH")) if os.getenv("VOICE_REF_PATH") else None
 STT_MUTE_LOCK   = Path(tempfile.gettempdir()) / "rachel_speaking.lock"
 WORKSPACE_DIR   = REPO_ROOT / "workspace"
